@@ -567,11 +567,6 @@
 <h4 id="pengertian-fuzzy-clustering">pengertian fuzzy clustering:<a class="headerlink" href="#pengertian-fuzzy-clustering" title="Permanent link">&para;</a></h4>
 <p>Fuzzy C-Means  (FCM) merupakan   teknik meengelompokan data yang  keberadaan  data dalam suatu kelompok ditentukan oleh nilai  atau derajat keanggotaan tertentu</p>
 <p>berikut adalah algoriyma dari FCM:</p>
-<p><img alt="1" src="c1.JPG" /></p>
-<p><img alt="" src="c2.JPG" /></p>
-<p><img alt="" src="c3.JPG" /></p>
-<p><img alt="4" src="c4.JPG" /></p>
-<p><img alt="4" src="c5.JPG" /></p>
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRsBbnmfWDiRT6OShVSdT6MvK_eHViwL6WliZvba0QAIE9klNFefouK2JiW2RFuJQ/pubhtml?widget=true&amp;headers=false"></iframe>
 
 <div class="codehilite"><pre><span></span>https://docs.google.com/spreadsheets/d/1yD6loNq8VoutgNbvjuEeGCqHpgYzwabY/edit#gid=1490456583
@@ -614,7 +609,6 @@
 </pre></div>
 
 
-<p><img alt="" src="plot_cmeans_1.png" /></p>
 <div class="codehilite"><pre><span></span><span class="n">fig1</span><span class="p">,</span> <span class="n">axes1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">alldata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">xpts</span><span class="p">,</span> <span class="n">ypts</span><span class="p">))</span>
 <span class="n">fpcs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -641,7 +635,6 @@
 </pre></div>
 
 
-<p><img alt="" src="plot_cmeans_2.png" /></p>
 <div class="codehilite"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span><span class="p">],</span> <span class="n">fpcs</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of centers&quot;</span><span class="p">)</span>
@@ -649,7 +642,6 @@
 </pre></div>
 
 
-<p><img alt="" src="plot_cmeans_3.png" /></p>
 <div class="codehilite"><pre><span></span><span class="n">cntr</span><span class="p">,</span> <span class="n">u_orig</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">cmeans</span><span class="p">(</span>
     <span class="n">alldata</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 
@@ -659,12 +651,10 @@
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alldata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">u_orig</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span><span class="p">],</span>
              <span class="n">alldata</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">u_orig</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;series &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;serie.legend()ns_4.png)</span>
 </pre></div>
 
 
-<p><img alt="" src="plot_cmeans_4.png" /></p>
 <div class="codehilite"><pre><span></span><span class="n">newdata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">10</span>
 
 <span class="n">u</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">jm</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">fpc</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">cmeans_predict</span><span class="p">(</span>
@@ -682,9 +672,6 @@
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
-
-<p><img alt="" src="plot_cmeans_5.png" /></p>
                 
                   
                 
